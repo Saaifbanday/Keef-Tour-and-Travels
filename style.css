@@ -1,0 +1,429 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+        font-family: "Poppins", sans-serif;
+       /*  font-weight: 400;
+        font-style: normal; */
+        /* height: 100%;
+        width: 100%; */
+}
+body.dark{
+    background-color: black;
+    color: #fff;
+}
+.section-one{
+    /* background-image: url(assests/1.jpg); */
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    animation: changeImage 50s ease-in-out infinite;
+}
+nav{
+    width: 100%;
+    background-color: #56687A;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    color: #fff;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    z-index: 100;
+}
+nav h1{
+    /* width: 40%; */
+    /* background-color: green; */
+    text-align: center;
+    padding-right: 2rem;
+    font-weight: 300;
+    font-size: 30px;
+}
+ul{
+    display: flex;
+    /* width: 60%; */
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    padding-inline: 2rem;
+    align-items: center;
+}
+nav button{
+    margin-right: 2rem;
+}
+.place-text{
+   position: absolute;
+   top: 40%;
+   left: 5%;
+   color: #fff;
+}
+.place-text h1{
+    font-size: 64px;
+   font-weight: 300;
+}
+.place-text p{
+    font-size: 16px;
+    font-weight: 300;
+}
+.btns{
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+}
+.icons{
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    font-size: 20px;
+}
+.icons :nth-child(2){
+    position: relative;
+}
+.icons :nth-child(1){
+    position: absolute;
+}
+.filledSun{
+    display: none;
+}
+.black{
+    color: black;
+}
+.btn{
+    background-color: #7d93aade;
+    color: white;
+    border: none;
+    padding: 8px 15px; 
+    text-align: center; 
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right:  4px;
+}
+@keyframes changeImage {
+    0%{
+        background-image: url(assests/1.jpg);
+    }
+    25%{
+        background-image: url(assests/2.jpg);
+    }
+    50%{
+        background-image: url(assests/3.jpg);
+    }
+    75%{
+        background-image: url(assests/5.jpg);
+    }
+    100%{
+        background-image: url(assests/6.jpg);
+    }
+}
+
+/* packages section */
+.packages{
+    margin-inline: 4rem;
+    margin-block: 2rem;
+}
+.packages-text{
+    width: 70%;
+ 
+}
+.packages-text :nth-child(1){
+    font-size: 50px;
+    font-weight: 400;
+}
+.packages-text :nth-child(2){
+    font-size: 18px;
+}
+.package-divs{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+.one{
+    background-image: url(assests/basicPackage.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 350px;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    border: none;
+    padding-bottom: 2rem;
+    color: #fff;
+    padding-inline: 1rem;
+    transition: transform 0.70s ease;
+}
+
+.one h5{
+    font-size: 26px;
+}
+
+.one .text{
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+.one .book-now {
+    width: 40%;
+    background-color: #0011ff; 
+    color: white; 
+    border: none; 
+    padding: 12px 24px; 
+    text-align: center; 
+    text-decoration: none;
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px; 
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+.packages .two{
+    background-image: url(assests/bascipackage2.jpg);
+}
+.packages .three{
+    background-image: url(assests/bascipaclahee3.jpg);
+
+}
+.one:hover{
+    transform: scale(1.1);
+    /* filter: blur(2px); */
+}
+/* new section stars from here */
+.destinations{
+    margin-inline: 4rem;
+    margin-block: 2rem;
+}
+.destinations h2{
+   font-size: 55px;
+   font-weight: 300;
+   margin-bottom: 1rem;
+}
+
+
+/* Grid Section Starts from here */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 1rem; /* Space between grid items */
+    grid-auto-rows: minmax(200px, 240px);
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: 100% 100%;
+    border-radius: inherit;
+    transition: 0.70s;
+}
+
+.grid-item span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+/* Gulmarg (1 column wide) */
+.gulmarg {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+/* Dal Lake (spanning 2 columns) */
+.dal-lake {
+    grid-column: 2 / 4; /* Span from column 2 to 4 */
+    grid-row: 1;
+}
+
+/* Sonmarg (1 column wide) */
+.sonmarg {
+    grid-column: 4 / 5;
+    grid-row: 1;
+}
+
+/* Pahalgam and Gurez (2nd row) */
+.pahalgam {
+    grid-column: 1 / 3; /* Span 2 columns */
+    grid-row: 2;
+    /* height: 350px; */
+}
+
+.gurez {
+    grid-column: 3 / 5; /* Span 2 columns */
+    grid-row: 2;
+    /* height: 350px; */
+
+}
+.grid-item img:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+    filter: brightness(0.8); /* Darken the image */
+}
+/* foods section */
+.foods-section{
+    margin-inline: 4rem;
+    margin-block: 2rem;
+}
+.foods-section h2{
+    margin-block: 1rem;
+    font-size: 55px;
+    font-weight: 300;
+}
+.foods{
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+}
+.container-text{
+    width: 40%;
+    padding: 1rem;
+}
+.container-food{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: yellow; */
+    padding: 2rem;
+}
+.common{
+    width: 30%;
+    height: 25rem;
+    transition: width 0.70s ease-in-out;
+
+}
+.common img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+.minus{
+   
+    filter: blur(5px); 
+}
+.common:hover{
+    width: 70rem;
+}
+/* what we offer section stars from here */
+.what-we-offer{
+    margin-inline: 4rem;
+    margin-block: 2rem;
+    /* background-color: yellow; */
+}
+.what-we-offer h2{
+    font-size: 55px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.offer-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.flaps{
+    max-width: 350px;
+    height: 400px;
+    color: white;
+    /* padding: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    position: relative;
+    overflow: hidden;
+
+}
+.hidden{
+    display: none;
+}
+.flaps img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.layer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0; 
+    /* height: 100%; */
+    overflow: hidden; 
+    transition: height 0.5s;
+    background: linear-gradient(rgba(0, 0, 0, 0.336),#ff004f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-inline: 1rem;
+}
+.layer h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.layer p{
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: justify;
+    font-weight: 300;
+}
+.flaps:hover .layer {
+    height: 100%;
+}
+.btn-container{
+    width: 100%;
+    text-align: center;
+}
+.see-more-btn {
+    margin: 50px auto;
+    width: fit-content;
+    /* border: 1px solid #ff004f; */
+    padding: 14px 50px;
+    /* border-radius: 6px; */
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+    background-color: #56687A;
+    border: none;
+}
+.see-more-btn:hover{
+    background-color: #ff004f;
+}
+
+/* testimonial section starts from here */
+.testimonial{
+    margin-inline: 4rem;
+    margin-block: 2rem;
+}
+.testimonial h2{
+    font-size: 55px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
