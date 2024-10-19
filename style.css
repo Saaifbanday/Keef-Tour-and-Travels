@@ -9,6 +9,7 @@ body{
         font-style: normal; */
         /* height: 100%;
         width: 100%; */
+        scroll-behavior: smooth;
 }
 body.dark{
     background-color: black;
@@ -48,6 +49,7 @@ ul{
     /* background-color: red; */
     justify-content: center;
     align-items: center;
+   position: relative;
 }
 ul li{
     list-style: none;
@@ -104,6 +106,55 @@ nav button{
     text-decoration: none;
     border-radius: 4px;
     margin-right:  4px;
+}
+/* dropdown of contact section */
+
+.contact-dropdown{
+    position: absolute;
+    left: 320px;
+    top: 62px;
+    color: black;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+    width: 33%;
+}
+.cntct{
+    cursor: pointer;
+    user-select: none;
+}
+.contact-dropdown.active{
+    display: block;
+}
+.contact-dropdown a{
+    padding-block: 6px !important;
+    transform: 0.40s;
+    cursor: pointer;
+    color: #2D2D2D;
+    text-decoration: none; 
+}
+.contact-dropdown a:hover{
+    background-color: #e9e8e8;
+}
+.contact-dropdown i{
+    color: black;
+    padding-left: 6px;
+}
+.contact-dropdown .inbox{
+    padding-left: 10px;
+}
+/* hamburger section */
+.hamburger{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 20px;
+    border: 1px solid black;
+    display: none;
+}
+.open.active{
+    display: block;
 }
 @keyframes changeImage {
     0%{
@@ -516,7 +567,7 @@ width: 50%;
     background-color: #575c62;
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
+    padding: 1.2rem;
     z-index: 2;
 }
 .footer::before{
@@ -578,7 +629,7 @@ width: 50%;
     margin-bottom: 6px;
 }
 .contact-us input,textarea{
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     font-size: 17px;

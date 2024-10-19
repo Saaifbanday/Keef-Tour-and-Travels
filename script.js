@@ -69,3 +69,12 @@ accordians.forEach(accordian=>{
     })
 })
 
+/* dropdown of contact in nav section */
+
+const contactAction = document.querySelector('.cntct')
+const contactDropdown = document.querySelector('.contact-dropdown')
+
+contactAction.addEventListener('click',()=>{
+contactDropdown.classList.toggle('active')
+})
+
