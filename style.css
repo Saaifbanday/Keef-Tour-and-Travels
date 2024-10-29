@@ -122,7 +122,7 @@ nav button{
     /* justify-content: end; */
     margin-right: 2rem;
     font-size: 20px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* width: 40px; */
     /* margin-left: auto; */
 }
@@ -209,6 +209,7 @@ nav button{
 }
 .tab-ph-hamburger.active{
     display: block;
+
 }
 .tab-ph-hamburger ul{
     display: flex;
@@ -267,6 +268,7 @@ nav button{
 .package-divs{
     display: flex;
     justify-content: space-evenly;
+    flex-shrink: 0;
     padding: 2rem;
 }
 .one {
@@ -349,7 +351,7 @@ nav button{
     transform: scale(1.1);
     /* filter: blur(2px); */
 }
-/* new section stars from here */
+/* Destination section stars from here */
 .destinations{
     margin-inline: 4rem;
     margin-block: 2rem;
@@ -584,8 +586,7 @@ nav button{
 }
 
 .group1 h3{
-position: relative;
-left: 15%;
+/* padding-left: 2rem; */
 font-size: 30px;
 font-weight: 400;
 width: 50%;
@@ -838,35 +839,91 @@ width: 50%;
     nav ul {
         display: none;
     }
+    nav h1{
+        font-size: 24px;
+    }
+    .place-text h1{
+        font-size: 26px;
+    }
     .open{
         display: block;
         font-size: 20px
     }
-    .offer-container{
+  
+
+   
+    
+    .tab{
+        display: none;
+    }
+    .package-divs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 0;
+        padding-block: 0;
+    }
+    
+    .package-divs > div:not(:last-child) {
+        margin-bottom: 20px; /* Use margin instead of gap */
+    }
+    .package-divs > div:first-child {
+        margin-top: 1.2rem;
+    }
+
+    .packages-text :nth-child(1){
+        font-size: 32px;
+        padding-bottom: 6px;
+    }
+    .packages-text{
+        width: 80%;
+    }
+    .destinations h2,.foods-section h2,.what-we-offer h2,.faq h2{
+        /* background-color: yellow; */
+        font-size: 36px;
+    }
+    .foods-section{
+        margin-inline: 2rem;
+    }
+    
+    .container-food {
+        width: 100%;
+        flex-wrap: wrap;
+        margin: auto;
+        gap: 4px;
+        padding: 14px;
+      }
+      /* .offer-container{
         justify-content: center;
         align-items: center;
-       }
+       } */
        .flaps{
         width: 100%;
         /* height: 400px; */
        }
-
-       .container-food {
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: auto;
-        /* background-color: red; */
-        gap: 4px;
+       .common{
+          width: 100%;
       }
-    .common{
-      /* background-color: yellow; */
-        width: 100%;
-      /* height: 12rem; */
-      /* padding: 8px; */
+      /* FAQ Section Starts From here */
+
+      .faq{
+        margin-inline: 1rem;
+      }
+      .group1 h3{
+        /* padding-left: 1.70rem; */
+        padding-left: 2rem;
+        font-size: 22px;
+        width: 80%;
+        /* background-color: yellow; */
+        margin-bottom: 10px;
     }
-    .tab{
-        display: none;
-    }
-    
+      .accordian{
+        max-width: 90%;
+      }
+      .accordian-question{
+        padding: 0.70rem;
+      }
+      .accordian-question h4{
+        font-size: 18px;
+      }
 }
