@@ -62,7 +62,7 @@ nav{
     display: flex;
     padding: 1rem;
     padding-inline: 1.5rem;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     color: #fff;
     position: fixed;
     top: 0; 
@@ -76,15 +76,17 @@ nav h1{
     padding-right: 2rem;
     font-weight: 300;
     font-size: 30px;
+    /* background-color: lightblue; */
 }
 ul{
     display: flex;
     /* width: 40%; */
-    background-color: red;
-    justify-content: flex-end;
+    /* background-color: red; */
+    /* justify-content: end; */
     align-items: center;
     position: relative;
     cursor: pointer;
+    margin-left: auto;
 }
 ul li{
     list-style: none;
@@ -112,17 +114,17 @@ nav button{
     width: 60%;
     text-align: justify;
 }
-.btns{
-    /* background-color: yellow; */
-    display: flex;
-    align-items: center;
-}
+
 .icons{
-    /* background-color: yellow; */
+    background-color: lightcoral;
     display: flex;
     align-items: center;
+    /* justify-content: end; */
     margin-right: 2rem;
     font-size: 20px;
+    border: 1px solid green;
+    /* width: 40px; */
+    /* margin-left: auto; */
 }
 .icons :nth-child(2){
     position: relative;
@@ -147,32 +149,31 @@ nav button{
     /* margin-right:  4px; */
 }
 /* dropdown of contact section */
-
-.contact-dropdown{
-    position: absolute;
-    left: 320px;
-    top: 62px;
-    color: black;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 4px;
-    display: none;
-    width: 33%;
-}
 .cntct{
+    position: relative;
     cursor: pointer;
     user-select: none;
 }
-.contact-dropdown.active{
-    display: block;
+.contact-dropdown{
+    position: absolute;
+    top: 50px;
+    padding: 14px;
+    color: black;
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+    
 }
 .contact-dropdown a{
-    padding-block: 6px !important;
-    transform: 0.40s;
+    line-height: 30px;
     cursor: pointer;
     color: #2D2D2D;
     text-decoration: none; 
 }
+.contact-dropdown.active{
+    display: block;
+}
+
 .contact-dropdown a:hover{
     background-color: #e9e8e8;
 }
@@ -190,8 +191,33 @@ nav button{
     align-items: center;
     gap: 6px;
     font-size: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* display: none; */
+}
+
+/* small  screen hamburger */
+.tab-ph-hamburger{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 90vh;
+    background-color: lightsalmon;
+    margin-top: 66px;
+}
+.tab-ph-hamburger.active{
+    display: block;
+}
+.tab-ph-hamburger ul{
+    display: flex;
+    flex-direction: column;
+    margin-block: 2rem;
+}
+.tab-ph-hamburger ul li{
+    padding: 8px 0;
+    font-size: 22px;
 }
 .open{
     display: none;
@@ -199,8 +225,29 @@ nav button{
 .close{
     display: none;
 }
-
-
+.cntct-screen{
+    position: relative;
+}
+.contact-dropdown-screen{
+    position: absolute;
+    right: 50%;
+    bottom: 38%;
+    transform: translateX(50%);
+    width: 24%;
+    padding: 10px 2px ;
+    display: none;
+    /* background-color: #0011ff; */
+    text-align: center;
+    line-height: 40px;
+}
+.contact-dropdown-screen a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+.contact-dropdown-screen.active{
+    display: block;
+}
 /* packages section */
 .packages{
     margin-inline: 4rem;
@@ -709,6 +756,9 @@ width: 50%;
 @media (max-width:900px){
     nav ul{
         display: none;
+    }
+    .icons{
+        margin-left: auto;
     }
     .open{
         display: block;

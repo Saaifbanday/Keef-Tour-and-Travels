@@ -71,10 +71,36 @@ accordians.forEach(accordian=>{
 
 /* dropdown of contact in nav section */
 
-const contactAction = document.querySelector('.cntct')
-const contactDropdown = document.querySelector('.contact-dropdown')
+const contactAction = document.querySelector('.cntct');
+const contactDropdown = document.querySelector('.contact-dropdown');
 
-contactAction.addEventListener('click',()=>{
-contactDropdown.classList.toggle('active')
+// Toggle the dropdown when clicking the button
+contactAction.addEventListener('click', (e) => {
+    contactDropdown.classList.toggle('active'); 
+    e.stopPropagation(); // Prevents the click from bubbling up
+});
+
+// Close the dropdown when clicking anywhere outside of it
+document.addEventListener('click', (e) => {
+    if (!contactDropdown.contains(e.target) && !contactAction.contains(e.target)) {
+        contactDropdown.classList.remove('active'); // Remove 'active' class to hide the dropdown
+    }
+});
+
+
+/* hamburger code starts from here */
+
+const open =  document.querySelector('.open')
+const screenHamburger = document.querySelector
+('.tab-ph-hamburger')
+open.addEventListener('click',()=>{
+screenHamburger.classList.toggle('active')
 })
 
+/* contact screen */
+
+const contactScreenBtn = document.querySelector('.cntct-screen')
+const contactSection = document.querySelector('.contact-dropdown-screen')
+contactScreenBtn.addEventListener('click',()=>{
+    contactSection.classList.toggle('active')
+})
