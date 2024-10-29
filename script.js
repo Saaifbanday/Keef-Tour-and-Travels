@@ -2,7 +2,6 @@ const one =  document.querySelector('.one')
 const two =  document.querySelector('.two')
 const three =  document.querySelector('.three')
 const emptySun = document.querySelector('.emptySun')
-const filledSun = document.querySelector('.sun')
 
 one.addEventListener('mouseover',()=>{
     two.classList.add('minus')
@@ -38,6 +37,7 @@ three.addEventListener('mouseover',()=>{
 })
 
 // dark mode functionality
+const filledSun = document.querySelector('.sun')
 emptySun.addEventListener('click',()=>{
    document.body.classList.toggle('dark')
    emptySun.classList.toggle('black')

@@ -15,20 +15,54 @@ body.dark{
     background-color: black;
     color: #fff;
 }
-.section-one{
-    /* background-image: url(assests/1.jpg); */
+.section-one {
     height: 100vh;
     background-position: center;
     background-size: cover;
     position: relative;
-    animation: changeImage 50s ease-in-out infinite;
+    animation: changeImage 30s ease-in-out infinite;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.section-one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    /* opacity: 0.70; */
+    background-color: #2d2d2d62;
+    z-index: -6;
+    
+}
+@keyframes changeImage {
+    0%{
+        background-image: url(assests/1.jpg);
+    }
+    25%{
+        background-image: url(assests/2.jpg);
+    }
+    50%{
+        background-image: url(assests/3.jpg);
+    }
+    75%{
+        background-image: url(https://www.khyberhotels.com/blog/wp-content/uploads/2023/07/galena-1024x683-1.jpg);
+    }
+    100%{
+        background-image: url(assests/6.jpg);
+    }
 }
 nav{
     width: 100%;
     background-color: #56687A;
     display: flex;
     padding: 1rem;
-    justify-content: space-around;
+    padding-inline: 1.5rem;
+    justify-content: space-between;
     color: #fff;
     position: fixed;
     top: 0; 
@@ -45,16 +79,19 @@ nav h1{
 }
 ul{
     display: flex;
-    /* width: 60%; */
-    /* background-color: red; */
-    justify-content: center;
+    /* width: 40%; */
+    background-color: red;
+    justify-content: flex-end;
     align-items: center;
-   position: relative;
+    position: relative;
+    cursor: pointer;
 }
 ul li{
     list-style: none;
-    padding-inline: 2rem;
+    padding-inline: 1rem;
     align-items: center;
+    /* background-color: green; */
+
 }
 nav button{
     margin-right: 2rem;
@@ -67,11 +104,13 @@ nav button{
 }
 .place-text h1{
     font-size: 64px;
-   font-weight: 300;
+   font-weight: 400;
 }
 .place-text p{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
+    width: 60%;
+    text-align: justify;
 }
 .btns{
     /* background-color: yellow; */
@@ -101,11 +140,11 @@ nav button{
     background-color: #7d93aade;
     color: white;
     border: none;
-    padding: 8px 15px; 
+    padding: 8px 10px; 
     text-align: center; 
     text-decoration: none;
     border-radius: 4px;
-    margin-right:  4px;
+    /* margin-right:  4px; */
 }
 /* dropdown of contact section */
 
@@ -146,33 +185,21 @@ nav button{
 }
 /* hamburger section */
 .hamburger{
+    /* width: 3%; */
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 20px;
     border: 1px solid black;
+    /* display: none; */
+}
+.open{
     display: none;
 }
-.open.active{
-    display: block;
+.close{
+    display: none;
 }
-@keyframes changeImage {
-    0%{
-        background-image: url(assests/1.jpg);
-    }
-    25%{
-        background-image: url(assests/2.jpg);
-    }
-    50%{
-        background-image: url(assests/3.jpg);
-    }
-    75%{
-        background-image: url(assests/5.jpg);
-    }
-    100%{
-        background-image: url(assests/6.jpg);
-    }
-}
+
 
 /* packages section */
 .packages{
@@ -309,7 +336,7 @@ nav button{
     object-fit: cover;
     background-position: 100% 100%;
     border-radius: inherit;
-    transition: 0.70s;
+    transition: 0.90s;
 }
 
 .grid-item span {
@@ -355,7 +382,7 @@ nav button{
 
 }
 .grid-item img:hover {
-    transform: scale(1.1); /* Slightly enlarge the image on hover */
+    transform: scale(1.2); /* Slightly enlarge the image on hover */
     filter: brightness(0.8); /* Darken the image */
 }
 /* foods section */
@@ -517,7 +544,7 @@ font-weight: 400;
 width: 50%;
 }
 .accordian{
-    width: 70%;
+    max-width: 70%;
     margin: auto;
     /* margin-bottom: 1rem; */
     cursor: pointer;
@@ -594,7 +621,9 @@ width: 50%;
 .info h3{
     font-size: 28px;
     font-weight: 400;
-    color: gold;
+    /* color: gold; */
+    /* color: black; */
+    text-decoration: underline;
 }
 .info :nth-child(2){
     font-size: 1rem;
@@ -604,15 +633,24 @@ width: 50%;
     font-size: 22px;
     font-weight: 500;
     margin-top: 6px;
-    color: gold;
+    /* color: gold; */
+    text-decoration: underline;
 }
 .info p{
     font-size: 15px;
 }
+.info-icons{
+    margin-top: 0.80rem;
+}
 .info-icons i{
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 8px;
     margin-inline: 4px;
+    transition: 0.50s;
+}
+.info-icons i:hover{
+    transform: translateY(-4px);
+    transform: scale(1.5);
 }
 .contact-us{
    width: 40%;
@@ -623,7 +661,10 @@ width: 50%;
 .contact-us h3{
     font-size: 28px;
     font-weight: 400;
-    color: gold;
+    /* color: gold; */
+    color: white;
+    /* padding-bottom: 1rem; */
+    text-decoration: underline;
 }
 .contact-us :nth-child(1){
     margin-bottom: 6px;
@@ -653,10 +694,133 @@ width: 50%;
     opacity: 0.50;
 }
 .footer-btn{
-    padding: 12px 14px;
+    padding: 10px 14px;
     border: 1px solid white;
     background-color: transparent;
     color: #fff;
    /*  position: absolute;
     left: 30px; */
+}
+.tab{
+    display: none;
+}
+/* media querries Strart From here */
+
+@media (max-width:900px){
+    nav ul{
+        display: none;
+    }
+    .open{
+        display: block;
+        font-size: 20px
+    }
+    .place-text h1{
+        font-size: 40px;
+    }
+    .place-text p{
+        font-size: 16px;
+    }
+    .foods{
+        flex-direction: column;
+    }
+    .container-text{
+        width: 90%;
+        margin: auto;
+    }
+        .container-food {
+          width: 90%;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: auto;
+          /* background-color: red; */
+          gap: 4px;
+        }
+      .common{
+        /* background-color: yellow; */
+        width: 48%;
+        height: 12rem;
+        padding: 8px;
+      }
+       .tab{
+        display: block;
+       }
+       .offer-container{
+        justify-content: center;
+       }
+    .flaps{
+        width: 45%;
+        height: 350px;
+    }
+    .layer {
+        padding-inline: 8px;
+    }
+    .layer h3{
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .layer p{
+        margin-top: 2px;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .faq h2{
+        font-size: 34px;
+    }
+    .group1 h3{
+        font-size: 22px;
+        width: 60%;
+    }
+    .accordian{
+        max-width: 80%;
+    }
+    .footer{
+        flex-direction: column;
+        
+    }
+    .footer .info{
+        width: 80%;
+        /* background-color: yellow; */
+    }
+    .contact-us{
+        width: 80%;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width:700px){
+
+    nav ul {
+        display: none;
+    }
+    .open{
+        display: block;
+        font-size: 20px
+    }
+    .offer-container{
+        justify-content: center;
+        align-items: center;
+       }
+       .flaps{
+        width: 100%;
+        /* height: 400px; */
+       }
+
+       .container-food {
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: auto;
+        /* background-color: red; */
+        gap: 4px;
+      }
+    .common{
+      /* background-color: yellow; */
+        width: 100%;
+      /* height: 12rem; */
+      /* padding: 8px; */
+    }
+    .tab{
+        display: none;
+    }
+    
 }
