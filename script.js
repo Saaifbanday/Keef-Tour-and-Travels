@@ -59,32 +59,19 @@ seeMoreBtn.addEventListener('click', () => {
 
 const accordians = document.querySelectorAll('.accordian')
 
-accordians.forEach(accordian=>{
-    const icon = accordian.querySelector('.icon')
-    const answer = accordian.querySelector('.accordian-answer')
+accordians.forEach(accordian => {
+    const icon = accordian.querySelector('.icon');
+    const answer = accordian.querySelector('.accordian-answer');
 
-    accordian.addEventListener('click',()=>{
-        icon.classList.toggle('active')
-        answer.classList.toggle('active')
-    })
-})
-
-/* dropdown of contact in nav section */
-
-const contactAction = document.querySelector('.cntct');
-const contactDropdown = document.querySelector('.contact-dropdown');
-
-// Toggle the dropdown when clicking the button
-contactAction.addEventListener('click', (e) => {
-    contactDropdown.classList.toggle('active'); 
-    e.stopPropagation(); // Prevents the click from bubbling up
-});
-
-// Close the dropdown when clicking anywhere outside of it
-document.addEventListener('click', (e) => {
-    if (!contactDropdown.contains(e.target) && !contactAction.contains(e.target)) {
-        contactDropdown.classList.remove('active'); // Remove 'active' class to hide the dropdown
-    }
+    accordian.addEventListener('click', () => {
+        if (icon.classList.contains('active')) {
+            icon.classList.remove('active');
+            answer.style.maxHeight = null;
+        } else {
+            icon.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    });
 });
 
 
@@ -97,10 +84,29 @@ open.addEventListener('click',()=>{
 screenHamburger.classList.toggle('active')
 })
 
-/* contact screen */
 
-const contactScreenBtn = document.querySelector('.cntct-screen')
-const contactSection = document.querySelector('.contact-dropdown-screen')
-contactScreenBtn.addEventListener('click',()=>{
-    contactSection.classList.toggle('active')
-})
+
+// Function to handle dropdown toggle and close logic
+function setupDropdown(toggleSelector, menuSelector) {
+    const toggleButton = document.querySelector(toggleSelector);
+    const dropdownMenu = document.querySelector(menuSelector);
+
+
+    // Toggle the dropdown when clicking the button
+    toggleButton.addEventListener('click', (e) => {
+        dropdownMenu.classList.toggle('active');
+        e.stopPropagation(); // Prevent click from bubbling up to the document
+    });
+
+    // Close the dropdown when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && !toggleButton.contains(e.target)) {
+            dropdownMenu.classList.remove('active');
+        }
+    });
+}
+
+// Reuse the function for multiple dropdowns or menus
+setupDropdown('.cntct', '.contact-dropdown');
+setupDropdown('.cntct-screen', '.contact-dropdown-screen');
+

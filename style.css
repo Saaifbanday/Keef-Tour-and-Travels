@@ -622,11 +622,7 @@ width: 50%;
     transition: max-height 0.4s;
     font-size: 18px;
 }
-.accordian-answer.active{
-    max-height: fit-content;
-    /* max-height: 500px; */
-    /* padding: 15px; */
-}
+
 .icon{
     transition: transform 0.4s;
 }
