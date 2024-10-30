@@ -24,7 +24,6 @@ body.dark{
     z-index: 10;
     overflow: hidden;
     background-attachment: fixed;
-    /* transition: background 1s ease-in-out; */
     transition: background-image 1s ease-in-out; 
 }
 
@@ -38,7 +37,7 @@ body.dark{
     background-position: center;
     background-size: cover;
     /* opacity: 0.70; */
-    background-color: #2d2d2d62;
+    background-color: #2d2d2d50;
     z-index: -6;
 }
 
@@ -270,7 +269,6 @@ nav button{
 }
 .packages-text{
     width: 70%;
- 
 }
 .packages-text :nth-child(1){
     font-size: 50px;
@@ -284,18 +282,20 @@ nav button{
     justify-content: space-evenly;
     flex-shrink: 0;
     padding: 2rem;
+    /* background-color: yellow; */
 }
 .one {
     max-width: 350px;
     min-height: 430px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 10px;
+    /* justify-content: space-between; */
     border-radius: 20px;
     border: none;
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
     color: #fff;
-    padding-inline: 1rem;
+    padding: 1.2rem;
     transition: transform 0.70s ease;
     position: relative;
     overflow: hidden; /* Prevent pseudo-element overflow */
@@ -314,21 +314,52 @@ nav button{
     border-radius: 20px; /* Matches the container’s border radius */
     pointer-events: none; 
 }
-
-.one h5{
-    font-size: 26px;
+.one-pricing{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    /* justify-content: space-between; */
+    position: absolute;
+    bottom: 15px;
+    /* background-color: yellow; */
 }
-
+.one h5{
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-block;
+}
+.info-btn{
+    vertical-align: middle;
+    padding: 3px 14px;
+    background-color: grey;
+    /* background-color: lightsalmon; */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    /* margin-bottom: 4px; */
+    /* margin-left: 1rem; */
+    position: absolute;
+    right: 20px;
+}
+ .rc{
+    background-color: lightgreen;
+}
+.cs{
+    background-color: #ff004f;
+}
 .one .text{
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 1rem;
 }
-.one .book-now {
-    width: 40%;
+.book-now {
+    vertical-align: middle;
+    width: 100%;
     background-color: #0011ff; 
     color: white; 
     border: none; 
-    padding: 12px 24px; 
+    padding: 8px 14px; 
     text-align: center; 
     text-decoration: none;
     font-size: 16px; 
@@ -336,12 +367,12 @@ nav button{
     border-radius: 5px; 
     border-radius: 30px;
     transition: background-color 0.3s ease;
-    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
-  
-  button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
+  .book-now:hover {
+    background-color: #0000cc;
+    transform: scale(1.09);
+}
   .packages .first{
     background-image: url(assests/Packages/basicPackage.jpg);
     background-size: cover;
@@ -465,7 +496,7 @@ nav button{
 }
 .container-text{
     width: 40%;
-    padding: 1rem;
+    padding: 1rem 0;
 }
 .container-food{
     width: 50%;
@@ -507,7 +538,7 @@ nav button{
 }
 .offer-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
@@ -593,12 +624,12 @@ nav button{
     margin-bottom: 1rem;
 }
 .group1{
-    width: 80%;
+    width: 74%;
     margin: auto;
     /* background-color: yellow; */
     margin-bottom: 1rem;
     padding: 10px;
-    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: rgba(34, 34, 34, 0.336) 0px 3px 8px;
 }
 
 .group1 h3{
@@ -608,11 +639,10 @@ font-weight: 400;
 width: 50%;
 }
 .accordian{
-    max-width: 70%;
+    /* max-width: 70%; */
     margin: auto;
     /* margin-bottom: 1rem; */
     cursor: pointer;
-    /* background-color: yellow; */
     
 }
 .accordian-question{
@@ -937,37 +967,42 @@ width: 50%;
         grid-row: auto;    /* Reset row spans */
     }
    
-    
-    }
-
-     /* FAQ Section Starts From here */
-     .faq{
+    .faq{
         margin-inline: 2rem;
       }
       .group1{
         padding: 0;
       }
-      .group1 h3{
-        /* padding-left: 1.70rem; */
-        padding-left: 0.40rem;
-        font-size: 22px;
-        width: 100%;
-        /* background-color: yellow; */
-        margin-bottom: 10px;
+
+ /* FAQ Section Starts From here */
+     
+ .group1 h3{
+    /* padding-left: 1.70rem; */
+    padding-left: 0.40rem;
+    font-size: 22px;
+    width: 100%;
+    /* background-color: yellow; */
+    margin-bottom: 10px;
+}
+  .accordian{
+    max-width: 100%;
+  }
+  .accordian-question{
+    padding: 0.70rem;
+  }
+  .accordian-question h4{
+    font-size: 18px;
+  }
+  .what-we-offer {
+    margin-inline: 2rem;
+  }
+  .flaps{
+    width: 100%;
+    /* height: 400px; */
+   }
+
+
     }
-      .accordian{
-        max-width: 100%;
-      }
-      .accordian-question{
-        padding: 0.70rem;
-      }
-      .accordian-question h4{
-        font-size: 18px;
-      }
-      .what-we-offer {
-        margin-inline: 2rem;
-      }
-      .flaps{
-        width: 100%;
-        /* height: 400px; */
-       }
+
+    
+    
