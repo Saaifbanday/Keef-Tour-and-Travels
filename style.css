@@ -20,9 +20,12 @@ body.dark{
     background-position: center;
     background-size: cover;
     position: relative;
-    animation: changeImage 30s ease-in-out infinite;
+    animation: changeImage 50s ease-in-out infinite;
     z-index: 10;
     overflow: hidden;
+    background-attachment: fixed;
+    /* transition: background 1s ease-in-out; */
+    transition: background-image 1s ease-in-out; 
 }
 
 .section-one::before {
@@ -37,23 +40,26 @@ body.dark{
     /* opacity: 0.70; */
     background-color: #2d2d2d62;
     z-index: -6;
-    
 }
+
 @keyframes changeImage {
     0%{
-        background-image: url(assests/1.jpg);
+        background-image: url(assests/Hero/1.jpg);
     }
-    25%{
-        background-image: url(assests/2.jpg);
+    20%{
+        background-image: url(assests/Hero/2.jpg);
     }
-    50%{
-        background-image: url(assests/3.jpg);
+    40%{
+        background-image: url(assests/Hero/3.jpg);
     }
-    75%{
-        background-image: url(https://www.khyberhotels.com/blog/wp-content/uploads/2023/07/galena-1024x683-1.jpg);
+    60%{
+        background-image: url(assests/Hero/4.jpg);
+    }
+    80%{
+        background-image: url(assests/Hero/5.jpg);
     }
     100%{
-        background-image: url(assests/6.jpg);
+        background-image: url(assests/Hero/6.jpg);
     }
 }
 nav{
@@ -76,6 +82,7 @@ nav h1{
     padding-right: 2rem;
     font-weight: 300;
     font-size: 30px;
+    cursor: pointer;
     /* background-color: lightblue; */
 }
 ul{
@@ -92,8 +99,15 @@ ul li{
     list-style: none;
     padding-inline: 1rem;
     align-items: center;
+    border-radius: 8px; /* Add border radius */
+    transition: background-color 0.3s ease, transform 0.3s ease;
     /* background-color: green; */
 
+}
+ul li:hover {
+    /* background-color: rgba(200, 200, 200, 0.4);  */
+    transform: scale(1.05);
+    cursor: pointer; 
 }
 nav button{
     margin-right: 2rem;
@@ -329,19 +343,19 @@ nav button{
     background-color: #0056b3; /* Darker blue on hover */
   }
   .packages .first{
-    background-image: url(assests/basicPackage.jpg);
+    background-image: url(assests/Packages/basicPackage.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 .packages .two{
-    background-image: url(assests/bascipackage2.jpg);
+    background-image: url(assests/Packages/bascipackage2.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .packages .three{
-    background-image: url(assests/bascipaclahee3.jpg);
+    background-image: url(assests/Packages/bascipaclahee3.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -579,6 +593,8 @@ nav button{
     margin-bottom: 1rem;
 }
 .group1{
+    width: 80%;
+    margin: auto;
     /* background-color: yellow; */
     margin-bottom: 1rem;
     padding: 10px;
@@ -596,6 +612,7 @@ width: 50%;
     margin: auto;
     /* margin-bottom: 1rem; */
     cursor: pointer;
+    /* background-color: yellow; */
     
 }
 .accordian-question{

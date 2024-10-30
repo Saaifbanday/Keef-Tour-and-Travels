@@ -110,3 +110,19 @@ function setupDropdown(toggleSelector, menuSelector) {
 setupDropdown('.cntct', '.contact-dropdown');
 setupDropdown('.cntct-screen', '.contact-dropdown-screen');
 
+
+/* image issue fixed */
+const images = [
+    'assests/Hero/1.jpg',
+    'assests/Hero/2.jpg',
+    'assests/Hero/3.jpg',
+    'assests/Hero/4.jpg',
+    'assests/Hero/5.jpg',
+    'assests/Hero/6.jpg',
+];
+
+images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+});
+
