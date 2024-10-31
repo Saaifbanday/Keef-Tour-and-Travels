@@ -285,7 +285,7 @@ nav button{
     /* background-color: yellow; */
 }
 .one {
-    max-width: 350px;
+    max-width: 330px;
     min-height: 430px;
     display: flex;
     flex-direction: column;
@@ -314,14 +314,22 @@ nav button{
     border-radius: 20px; /* Matches the container’s border radius */
     pointer-events: none; 
 }
+.one-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* text-decoration: underline; */
+    flex-wrap: wrap;
+}
 .one-pricing{
     display: flex;
     align-items: center;
-    gap: 50px;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%; /* Ensures justify-content will work correctly */
     position: absolute;
     bottom: 15px;
-    /* background-color: yellow; */
+    width: calc(100% - 34px); 
 }
 .one h5{
     font-size: 24px;
@@ -329,21 +337,17 @@ nav button{
     display: inline-block;
 }
 .info-btn{
-    vertical-align: middle;
+    /* vertical-align: middle; */
     padding: 3px 14px;
     background-color: grey;
-    /* background-color: lightsalmon; */
     color: white;
     border: none;
     border-radius: 12px;
     font-size: 16px;
     font-weight: 600;
-    /* margin-bottom: 4px; */
-    /* margin-left: 1rem; */
-    position: absolute;
-    right: 20px;
+    margin-bottom: 4px;
 }
- .rc{
+ .ad{
     background-color: lightgreen;
 }
 .cs{
@@ -355,7 +359,7 @@ nav button{
 }
 .book-now {
     vertical-align: middle;
-    width: 100%;
+    max-width: 100%;
     background-color: #0011ff; 
     color: white; 
     border: none; 
@@ -907,7 +911,7 @@ width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-inline: 0;
+        padding-inline: 10px;
         padding-block: 0;
     }
     
@@ -931,6 +935,9 @@ width: 50%;
     }
     .foods-section{
         margin-inline: 2rem;
+    }
+    .offer-container{
+        padding-inline: 4px;
     }
     .container-text{
         width: 100%;
@@ -958,6 +965,7 @@ width: 50%;
         margin-inline: 2.2rem;
     }
       .grid-container {
+        padding-inline: 4px;
         grid-template-columns: repeat(1, 1fr); /* 1 column */
     }
 
@@ -971,7 +979,7 @@ width: 50%;
         margin-inline: 2rem;
       }
       .group1{
-        padding: 0;
+        width: 100%;
       }
 
  /* FAQ Section Starts From here */
