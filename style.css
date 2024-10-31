@@ -2,14 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
-        font-family: "Poppins", sans-serif;
-       /*  font-weight: 400;
-        font-style: normal; */
-        /* height: 100%;
-        width: 100%; */
-        scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
 }
 body.dark{
     background-color: black;
@@ -102,6 +98,10 @@ ul li{
     transition: background-color 0.3s ease, transform 0.3s ease;
     /* background-color: green; */
 
+}
+ul li a{
+    text-decoration: none;
+    color: inherit;
 }
 ul li:hover {
     /* background-color: rgba(200, 200, 200, 0.4);  */
@@ -542,10 +542,11 @@ nav button{
 }
 .offer-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+    /* background-color: yellow; */
 }
 
 .flaps{
@@ -556,10 +557,23 @@ nav button{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     position: relative;
     overflow: hidden;
-
+    transition: opacity 0.5s ease; 
 }
-.hidden{
-    display: none;
+.hidden {
+    opacity: 0; /* Hide the element */
+    position: absolute; /* Remove from flow */
+    pointer-events: none; /* Disable interaction */
+    top: 0; /* Position it correctly */
+    left: 0; /* Position it correctly */
+    z-index: -1; /* Ensure it stays behind visible items */
+}
+
+/* Visible state */
+.visible {
+    opacity: 1; /* Show the element */
+    position: relative; /* Back to flow */
+    pointer-events: auto; /* Enable interaction */
+    z-index: 1; /* Ensure it stays on top */
 }
 .flaps img{
     width: 100%;
@@ -606,7 +620,7 @@ nav button{
     width: fit-content;
     /* border: 1px solid #ff004f; */
     padding: 14px 50px;
-    /* border-radius: 6px; */
+    border-radius: 6px;
     text-decoration: none;
     color: #fff;
     transition: background 0.5s;
@@ -684,7 +698,7 @@ width: 50%;
 
 /* contact us section stars from here */
 
-.footer {
+#footer {
     position: relative;
     background-color: #575c62;
     display: flex;
@@ -692,7 +706,7 @@ width: 50%;
     padding: 1.2rem;
     z-index: 2;
 }
-.footer::before{
+#footer::before{
     content: "";
     position: absolute;
     top: 0;
@@ -707,7 +721,7 @@ width: 50%;
     z-index: -1;
     pointer-events: none;
 }
-.footer .info{
+#footer .info{
     color: #fff;
     width: 40%;
     /* border:1px solid black; */
@@ -871,11 +885,11 @@ width: 50%;
     .accordian{
         max-width: 80%;
     }
-    .footer{
+    #footer{
         flex-direction: column;
         
     }
-    .footer .info{
+    #footer .info{
         width: 80%;
         /* background-color: yellow; */
     }
@@ -914,7 +928,7 @@ width: 50%;
         padding-inline: 10px;
         padding-block: 0;
     }
-    
+   
     .package-divs > div:not(:last-child) {
         margin-bottom: 20px; /* Use margin instead of gap */
     }
@@ -1010,7 +1024,7 @@ width: 50%;
    }
 
 
-    }
+}
 
     
     

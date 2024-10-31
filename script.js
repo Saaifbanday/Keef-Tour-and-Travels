@@ -44,16 +44,21 @@ emptySun.addEventListener('click',()=>{
 })
 
 // hidden section functionality
-const seeMoreBtn = document.querySelector('.see-more-btn')
-const hiddenDivs = document.querySelectorAll('.hidden')
+const seeMoreBtn = document.querySelector('.see-more-btn');
+const hiddenDivs = document.querySelectorAll('.flaps.hidden');
 
 seeMoreBtn.addEventListener('click', () => {
-    hiddenDivs.forEach((div) => { 
-            div.style.display = "flex"; 
-    })
-
-    seeMoreBtn.style.display = 'none'; 
+    // Toggle visibility by adding/removing the classes
+    hiddenDivs.forEach(div => div.classList.toggle('hidden'));
+    
+    // Change button text based on visibility
+    if (hiddenDivs[0].classList.contains('hidden')) {
+        seeMoreBtn.textContent = 'See More'; 
+    } else {
+        seeMoreBtn.textContent = 'Hide'; 
+    }
 });
+
 
 //accordian section 
 
@@ -125,4 +130,5 @@ images.forEach((src) => {
     const img = new Image();
     img.src = src;
 });
+
 
